@@ -39,4 +39,9 @@ class Dog
     dog
   end
 
+  def self.find_by_id(num)
+    sql = "SELECT * FROM dogs WHERE id = ?"
+    DB[:conn].execute(sql, num)
+  end
+
 end
